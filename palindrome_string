@@ -1,0 +1,14 @@
+import java.util.*;
+public class Main{
+    static boolean palindromeString(String s){
+        String s1 = "";
+        for(int i=s.length()-1;i>=0;i--){
+            s1 = s1+s.charAt(i);
+        }
+        return s.equals(s1);
+    }
+    public static void main(String[] args){
+       String s = "madam";
+       System.out.println(palindromeString(s));
+    }
+}
