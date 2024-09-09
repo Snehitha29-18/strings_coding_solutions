@@ -1,0 +1,24 @@
+public class Main{
+    static int[] countVowelsConsonants(String s){
+        int count =0;
+        int count_consonants =0;
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            char ch = Character.toLowerCase(c);
+            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+                count++;
+            }
+            else{
+                count_consonants++;
+            }
+        }
+        return new int[]{count,count_consonants};
+    }
+    public static void main(String[] args){
+        String s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int[] res = countVowelsConsonants(s);
+        for(int a : res){
+            System.out.print(a + " ");
+        }
+    }
+}
