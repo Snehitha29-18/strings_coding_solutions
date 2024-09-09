@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main{
+    static String removeVowels(String s){
+        return s.replaceAll("[aeiouAEIOU]", "");
+    }
+    static String removeVowelsM(String s){
+        char[] c = s.toCharArray();
+        StringBuilder res = new StringBuilder();
+        for(char ch : c){
+            if("aeiouAEIOU".indexOf(ch) == -1){
+                res.append(ch);
+            }
+        }
+        return res.toString();
+    }
+    public static void main(String[] args){
+       String s = "snehitha";
+       System.out.println(removeVowels(s));
+       System.out.println(removeVowelsM(s));
+    }
+}
