@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class CapitalizeFirstLast {
+    public static String capitalizeFirstAndLastLetter(String input) {
+        // Split the input string into words
+        String[] words = input.split("\\s+");
+        StringBuilder result = new StringBuilder();
+
+        // Loop through each word
+        for (String word : words) {
+            int len = word.length();
+            if (len == 1) {
+                // If the word has only one character, capitalize it
+                result.append(Character.toUpperCase(word.charAt(0)));
+            } else {
+                // Capitalize the first and last letter of the word
+                result.append(Character.toUpperCase(word.charAt(0))) // first letter
+                      .append(word.substring(1, len - 1)) // middle letters
+                      .append(Character.toUpperCase(word.charAt(len - 1))); // last letter
+            }
+            result.append(" "); // Add space between words
+        }
+
+        // Return the final result string with the trimmed extra space at the end
+        return result.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input string
+        System.out.println("Enter a string: ");
+        String input = sc.nextLine();
+
+        // Get capitalized string
+        String capitalized = capitalizeFirstAndLastLetter(input);
+
+        // Output the result
+        System.out.println("Capitalized String: " + capitalized);
+
+        sc.close();
+    }
+}
